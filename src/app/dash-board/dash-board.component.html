@@ -27,21 +27,20 @@
                 <th style="color: #ffffff">StartDate</th>
                 <th style="color: #ffffff">Actions</th>
             </tr>
-            <tr>
+            <!-- Printing into the table which is comming from database -->
+            <tr *ngFor="let item of empDataList;" >
             <td>
                 <img class="profile" src="../assets/profile-images/Ellipse -3.png">
 
             </td>
-            <td>
-                Sriaknth
-            </td>
-            <td>Male</td>
+            <td>{{item.name}}</td>
+            <td>{{item.gender}}</td>
             <td>
                 <div class="dept-label">Engineer</div>
                 <div class="dept-label">Others</div>
             </td>
-            <td>400000</td>
-            <td>16 Oct 2021</td>
+            <td>{{item.salary}}</td>
+            <td>{{item.startDate}}</td>
             <td>
                 <img alt="delete" src="../assets/icons/delete-black-18dp.svg">
                 <img alt="edit" src="../assets/icons/create-black-18dp.svg">
@@ -72,7 +71,7 @@
         </tr>
 
         <!-- Person 3 -->
-        <tr>
+        <!-- <tr>
             <td>
                 <img class="profile" src="../assets/profile-images/Ellipse -4.png">
 
@@ -92,7 +91,7 @@
                 <img alt="edit" src="../assets/icons/create-black-18dp.svg">
             </td>
         </tr>
-
+ -->
 
 
         </table>
