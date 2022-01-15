@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // title = 'employepayroll-app';
+  title = 'employepayroll-app';
   // user:any;
   //  empDataList:UserDetails[]=[];
   // constructor(private employee: EmployeeService){}

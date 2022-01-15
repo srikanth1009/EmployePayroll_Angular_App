@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddEmployeeComponent } from './add-employee/add-employee/add-employee.component';
 import {HeaderComponent} from "./component/header/header.component"
 import { DashBoardComponent } from './dash-board/dash-board.component';
 
 const routes: Routes = [
-  {path:'empheader', component:HeaderComponent},
-  {path: 'dashbord' , component: DashBoardComponent},
+  {path:'', component:DashBoardComponent},
+  {path: 'dashboard' , component: DashBoardComponent},
+  {path:'addemployee', component:AddEmployeeComponent}
 ];
 
 @NgModule({

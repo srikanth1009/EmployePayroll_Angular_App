@@ -2,14 +2,14 @@ export interface UserDetails {
 
     // message:String;
     // data:any ;
-    // employeeId: number;
+     employeeId: number;
     name:String;
     gender: String;
-    departments: String;
+    department: String;
     salary: number,
     startDate:any;
     profilePic:any;
-    // note: String;
+    note: String;
     // profilePic:String;
 
 }

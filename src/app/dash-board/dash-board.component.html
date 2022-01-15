@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="main-content">
     <div class="header-content">
         <div class="emp-detail-text">
@@ -8,92 +9,41 @@
             </div>
             Employee Details
         </div>
-        <a class="add-button" Link="">
-            <img src="../assets/icons/add-24px.svg" alt="Add User Logo">
-            Add User
-        </a>
+        <button class="add-button"  routerLink="/addemployee"><img src="../../assets/icons/add-24px.svg"> Add user</button>
     </div>
-
-
     <div class="table-main">
 
         <table id="display" class="table">
-            <tr style=" background: #112538 0% 0% no-repeat padding-box;;">
-                <th></th>
-                <th style="color: #ffffff">Name</th>
-                <th style="color: #ffffff">Gender</th>
-                <th style="color: #ffffff">Department</th>
-                <th style="color: #ffffff">Salary</th>
-                <th style="color: #ffffff">StartDate</th>
-                <th style="color: #ffffff">Actions</th>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>StartDate</th>
+                <th>Actions</th>
             </tr>
             <!-- Printing into the table which is comming from database -->
-            <tr *ngFor="let item of empDataList;" >
-            <td>
-                <img class="profile" src="../assets/profile-images/Ellipse -3.png">
+            <tr *ngFor="let item of empDataList">
+                <td>
+                    <img class="profile" src="{{item.profilePic}}">
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.gender}}</td>
+                <td>
+                    <div class="dept-label">Engineer</div>
+                    <div class="dept-label">Other</div>
+                    <div class="dept-label">{{item.department}}</div>
+                </td>
+                <td>{{item.salary}}</td>
+                <td>{{item.startDate}}</td>
+                <td>
+                    <img alt="delete" src="../assets/icons/delete-black-18dp.svg" (click)="delete(item.employeeId)"
+                        routerLink="/dashboard">
 
-            </td>
-            <td>{{item.name}}</td>
-            <td>{{item.gender}}</td>
-            <td>
-                <div class="dept-label">Engineer</div>
-                <div class="dept-label">Others</div>
-            </td>
-            <td>{{item.salary}}</td>
-            <td>{{item.startDate}}</td>
-            <td>
-                <img alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                <img alt="edit" src="../assets/icons/create-black-18dp.svg">
-            </td>
+                    <img alt="edit" src="../assets/icons/create-black-18dp.svg"
+                        routerLink="/empForm/{{item.employeeId}}">
+                </td>
             </tr>
-
-            
-            <!-- Person 2 -->
-            <tr>
-            <td>
-                <img class="profile" src="../assets/profile-images/Ellipse -2.png">
-
-            </td>
-            <td>
-                Ananth
-            </td>
-            <td>Male</td>
-            <td>
-                <div class="dept-label">Engineer</div>
-                <div class="dept-label">Others</div>
-            </td>
-            <td>400000</td>
-            <td>16 Oct 2021</td>
-            <td>
-                <img alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                <img alt="edit" src="../assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
-
-        <!-- Person 3 -->
-        <!-- <tr>
-            <td>
-                <img class="profile" src="../assets/profile-images/Ellipse -4.png">
-
-            </td>
-            <td>
-                  Ashish
-            </td>
-            <td>Female</td>
-            <td>
-                <div class="dept-label">HR</div>
-                <div class="dept-label">Others</div>
-            </td>
-            <td>30000</td>
-            <td>16 Oct 2021</td>
-            <td>
-                <img alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                <img alt="edit" src="../assets/icons/create-black-18dp.svg">
-            </td>
-        </tr>
- -->
-
-
+            <br>
         </table>
     </div>
-</div>
